@@ -17,4 +17,14 @@ public class TemplateTest extends TestCase{
 		assertEquals("a@b.com", testEmail.getBccAddresses().get(0).toString());
 	}
 
+	public void testAddMultipleBcc() throws EmailException {
+		System.out.println("Test adding multiple BCC addresses using addBcc(String... emails)");
+		Email[] dummyEmails = ["a@b.com", "b@c.com", "c@d.com", "d@e.com"];
+		testEmail.addBcc(dummyEmails);
+		assertEquals(dummyEmails[0], testEmail.getBccAddresses().get(0).toString());
+		assertEquals(dummyEmails[1], testEmail.getBccAddresses().get(1).toString());
+		assertEquals(dummyEmails[2], testEmail.getBccAddresses().get(2).toString());
+		assertEquals(dummyEmails[3], testEmail.getBccAddresses().get(3).toString());
+	}
+
 }
