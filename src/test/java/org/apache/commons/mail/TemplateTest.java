@@ -16,11 +16,4 @@ public class TemplateTest extends TestCase{
 		testEmail.addBcc("a@b.com");
 		assertEquals("a@b.com", testEmail.getBccAddresses().get(0).toString());
 	}
-
-	public void testAddCc() throws EmailException {
-		System.out.println("Test add cc");
-		testEmail.addCc("a@b.com");
-		assertEquals("a@b.com", testEmail.getCcAddresses().get(0).toString());
-	}
-
 }
